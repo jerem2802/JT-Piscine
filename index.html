@@ -1,0 +1,542 @@
+<!-- index.html — Site vitrine JT Piscines (HTML/Tailwind, 1 fichier) -->
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JT Piscines — Dépannage & Contrats d’entretien (Bordeaux, Médoc, Bassin)</title>
+    <meta name="description" content="Dépannage rapide piscine : filtration, pompes, coffrets, régulation pH/RedOx. Interventions sous 48h selon secteur. Contrats d'entretien disponibles." />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>💧</text></svg>" />
+
+    <!-- Canonical & Open Graph (SEO) -->
+    <link rel="canonical" href="https://tondomaine.fr/" />
+    <meta property="og:title" content="JT Piscines — Dépannage & Contrats (Bordeaux, Médoc, Bassin)" />
+    <meta property="og:description" content="Dépannage rapide, contrats d’entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tondomaine.fr/" />
+    <meta property="og:image" content="https://tondomaine.fr/og.jpg" />
+
+    <!-- Tailwind CDN (zéro build) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: "#0891b2" } } } } };
+    </script>
+    <!-- Lucide icons -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- SEO LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "JT Piscines",
+        "image": "https://tondomaine.fr/og.jpg",
+        "telephone": "+33PHONE",
+        "areaServed": ["Bordeaux Métropole", "Médoc", "Bassin d'Arcachon"],
+        "url": "https://tondomaine.fr",
+        "description": "Dépannage & interventions piscine: filtration, pompes, coffrets, régulation.",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bordeaux", "addressCountry": "FR" }
+      }
+    </script>
+
+    <style>
+      /* micro améliorations */
+      .glass {
+        backdrop-filter: saturate(150%) blur(6px);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* éviter la sélection/drag pendant le swipe */
+      .jt-track,
+      .jt-slide {
+        user-select: none;
+        -webkit-user-drag: none;
+      }
+      /* fallback si lucide tarde */
+      i[data-lucide]::before {
+        content: "◆";
+        font-size: 0.9em;
+        color: #9ca3af;
+      }
+      svg.lucide + i[data-lucide]::before {
+        content: "";
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-white text-gray-900">
+    <!-- BARRE HAUTE -->
+    <header class="sticky top-0 z-40 bg-white/80 glass border-b">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a class="flex items-center gap-2 font-semibold tracking-tight" href="#">
+          <span class="inline-block h-3 w-3 rounded-full bg-brand"></span>
+          <span>JT Piscines</span>
+        </a>
+
+        <!-- NAV desktop -->
+        <nav class="hidden sm:flex items-center gap-6 text-sm">
+          <a class="hover:text-brand transition-colors" href="#services">Services</a>
+          <a class="hover:text-brand transition-colors" href="#contrats">Contrats d'entretien</a>
+          <a class="hover:text-brand transition-colors" href="#zones">Zones</a>
+          <a class="hover:text-brand transition-colors" href="#contact">Contact</a>
+          <!-- NEW -->
+          <a class="hover:text-brand transition-colors" href="cgu-cgv.html" rel="nofollow">CGU/CGV</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <!-- Bouton CGU/CGV visible en mobile -->
+          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
+
+          <a id="callBtn" href="tel:+33PHONE" class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
+          <a id="waBtn" href="https://wa.me/WHATSAPP" class="inline-flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="border-b">
+      <div class="mx-auto max-w-6xl px-4 py-14 lg:py-20 grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs text-gray-600"><i data-lucide="clock" class="h-3.5 w-3.5"></i> Interventions rapides – devis clair</p>
+          <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight">
+            Dépannage & Contrats d'Entretien piscine.
+            <span class="block text-brand text-3xl">Filtration, pompes, coffrets, régulation...</span>
+          </h1>
+          <p class="mt-4 text-gray-600 max-w-xl">Entreprise locale spécialisée dans le diagnostic, les contrats de maintenance et la remise en service rapide de votre bassin.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contact" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-white font-medium hover:brightness-95"> <i data-lucide="phone"></i> Demander une intervention </a>
+            <a href="#services" class="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 hover:bg-gray-50"> Voir les services </a>
+          </div>
+          <div class="mt-6 flex items-center gap-6 text-sm text-gray-500">
+            <div class="flex items-center gap-2"><i data-lucide="shield"></i> Travail propre & soigné</div>
+            <div class="flex items-center gap-2"><i data-lucide="clock"></i> Créneaux sous 48h*</div>
+          </div>
+          <p class="mt-1 text-xs text-gray-400">*selon période et secteur</p>
+        </div>
+
+        <!-- CAROUSEL -->
+        <div class="relative">
+          <div id="jt-carousel" class="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border shadow-sm bg-gray-50" role="region" aria-label="Carrousel de piscines" tabindex="0">
+            <!-- piste -->
+            <div class="jt-track flex h-full w-full transition-transform duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform">
+              <div class="jt-slide shrink-0 grow-0 basis-full relative">
+                <img src="images/piscine1.png" alt="Piscine contemporaine familiale" class="h-full w-full object-cover" />
+              </div>
+              <div class="jt-slide shrink-0 grow-0 basis-full relative">
+                <img src="images/piscine2.png" alt="Piscine contemporaine familiale" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="jt-slide shrink-0 grow-0 basis-full relative">
+                <img src="images/piscine3.png" alt="Piscine luxe terrasse bois" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="jt-slide shrink-0 grow-0 basis-full relative">
+                <img src="images/piscine4.png" alt="Piscine moderne" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="jt-slide shrink-0 grow-0 basis-full relative">
+                <img src="images/piscine5.png" alt="Piscine familiale" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </div>
+              <div class="jt-slide shrink-0 grow-0 basis-full relative">
+                <img src="images/piscine6.png" alt="Piscine design" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+              </div>
+            </div>
+            <!-- contrôles -->
+            <button type="button" class="jt-prev absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 backdrop-blur px-3 py-2 shadow hover:bg-white"><span class="sr-only">Précédent</span>‹</button>
+            <button type="button" class="jt-next absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 backdrop-blur px-3 py-2 shadow hover:bg-white"><span class="sr-only">Suivant</span>›</button>
+            <!-- puces -->
+            <div class="jt-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+          </div>
+        </div>
+        <!-- /CAROUSEL -->
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+      <h2 class="text-2xl sm:text-3xl font-bold">Services d'intervention</h2>
+      <p class="mt-2 text-gray-600 max-w-2xl">Diagnostic, réparation et optimisation de votre installation. Matériel toutes marques.</p>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="wrench"></i></span>
+            <div>
+              <h4 class="font-semibold">Dépannage urgent</h4>
+              <p class="mt-1 text-sm text-gray-600">Pannes, fuites, désamorçage, circulation d'eau, bruits anormaux.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="droplets"></i></span>
+            <div>
+              <h4 class="font-semibold">Filtration & hydraulique</h4>
+              <p class="mt-1 text-sm text-gray-600">Pompes, filtres, vannes, fuites local technique.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="gauge"></i></span>
+            <div>
+              <h4 class="font-semibold">Régulation & chimie</h4>
+              <p class="mt-1 text-sm text-gray-600">pH/RedOx, sondes, électrolyseur sel, calibrage.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="zap"></i></span>
+            <div>
+              <h4 class="font-semibold">Électricité & coffrets</h4>
+              <p class="mt-1 text-sm text-gray-600">Coffrets, disjoncteurs, timers, protections.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="snowflake"></i></span>
+            <div>
+              <h4 class="font-semibold">Remises en service / Hivernage</h4>
+              <p class="mt-1 text-sm text-gray-600">Ouverture printemps, purge, réglages ; hivernage actif/passif.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="replace"></i></span>
+            <div>
+              <h4 class="font-semibold">Rénovations légères</h4>
+              <p class="mt-1 text-sm text-gray-600">Changement pompe/filtre, joints, petits appareillages.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTRATS -->
+    <section class="bg-gray-50 border-y" id="contrats">
+      <div class="mx-auto max-w-6xl px-4 py-12">
+        <h3 class="text-4xl font-bold">Contrats d'entretien</h3>
+        <p class="mt-2 text-gray-600 max-w-3xl">Des passages réguliers pour garder une eau claire et un matériel qui dure. Les urgences et dépannages restent prioritaires ; on choisit un contrat seulement si ça a du sens pour votre bassin.</p>
+
+        <!-- Cartes packs -->
+        <div class="mt-6 grid md:grid-cols-3 gap-4 items-stretch">
+          <!-- Essentiel -->
+          <div class="rounded-2xl border bg-white p-5 flex flex-col h-full">
+            <div>
+              <div class="text-sm font-medium text-brand">Pack</div>
+              <h4 class="text-lg font-semibold">Essentiel</h4>
+              <p class="mt-1 text-sm text-gray-600">1 passage / mois (hors plein hiver) – idéal résidence secondaire / bassin stable.</p>
+              <ul class="mt-4 space-y-2 text-sm text-gray-700">
+                <li>• Tests rapides pH/Chlore/RedOx</li>
+                <li>• Ajustements basiques (produits non inclus)</li>
+                <li>• Contrôle pompe/filtre/pression</li>
+                <li>• Nettoyage panier skimmer + préfiltre pompe</li>
+                <li>• Conseils entre 2 visites</li>
+              </ul>
+            </div>
+            <div class="mt-auto grid grid-cols-2 gap-2 text-center">
+              <div class="rounded-xl border p-3">
+                <div class="text-xs text-gray-500">Mensuel</div>
+                <div class="text-xl font-bold">59€</div>
+              </div>
+              <div class="rounded-xl border p-3">
+                <div class="text-xs text-gray-500">Annuel</div>
+                <div class="text-xl font-bold">649€</div>
+                <div class="text-[11px] text-gray-500">(1 mois offert)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Confort -->
+          <div class="rounded-2xl border bg-white p-5 flex flex-col h-full">
+            <div>
+              <div class="text-sm font-medium text-brand">Pack</div>
+              <h4 class="text-lg font-semibold">Confort</h4>
+              <p class="mt-1 text-sm text-gray-600">2 passages / mois en saison + 1 / mois hors saison – parfait usage régulier.</p>
+              <ul class="mt-4 space-y-2 text-sm text-gray-700">
+                <li>• Tout le pack Essentiel</li>
+                <li>• Nettoyage skimmers, ligne d'eau localisée</li>
+                <li>• Lavage/rinçage filtre si besoin</li>
+                <li>• Calibrage rapide régulation pH/RedOx</li>
+                <li>• Petit dépannage niveau 1 (resserrage, colliers…)</li>
+              </ul>
+            </div>
+            <div class="mt-auto grid grid-cols-2 gap-2 text-center">
+              <div class="rounded-xl border p-3">
+                <div class="text-xs text-gray-500">Mensuel</div>
+                <div class="text-xl font-bold">99€</div>
+              </div>
+              <div class="rounded-xl border p-3">
+                <div class="text-xs text-gray-500">Annuel</div>
+                <div class="text-xl font-bold">990€</div>
+                <div class="text-[11px] text-gray-500">(2 mois offerts)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sérénité -->
+          <div class="rounded-2xl border bg-white p-5 flex flex-col h-full">
+            <div>
+              <div class="text-sm font-medium text-brand">Pack</div>
+              <h4 class="text-lg font-semibold">Sérénité</h4>
+              <p class="mt-1 text-sm text-gray-600">Hebdo en saison + 2 / mois hors saison – priorité créneaux & suivi.</p>
+              <ul class="mt-4 space-y-2 text-sm text-gray-700">
+                <li>• Tout le pack Confort</li>
+                <li>• Nettoyage complet panier + préfiltre + vérif robots</li>
+                <li>• Contrôles électriques visuels (coffret, protections)</li>
+                <li>• Assistance prioritaire en 24–48h (ouvrés)</li>
+                <li>• Hivernage <em>ou</em> remise en service inclus (au choix)</li>
+              </ul>
+            </div>
+            <div class="mt-auto grid grid-cols-2 gap-2 text-center">
+              <div class="rounded-xl border p-3">
+                <div class="text-xs text-gray-500">Mensuel</div>
+                <div class="text-xl font-bold">179€</div>
+              </div>
+              <div class="rounded-xl border p-3">
+                <div class="text-xs text-gray-500">Annuel</div>
+                <div class="text-xl font-bold">1 790€</div>
+                <div class="text-[11px] text-gray-500">(2 mois offerts)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tableau récap -->
+        <div class="mt-8">
+          <!-- Desktop -->
+          <div class="hidden lg:block overflow-x-auto">
+            <table class="w-full text-sm border rounded-xl overflow-hidden">
+              <thead class="bg-white">
+                <tr>
+                  <th class="text-left p-3 border">Pack</th>
+                  <th class="text-left p-3 border">Fréquence</th>
+                  <th class="text-left p-3 border">Produits</th>
+                  <th class="text-left p-3 border">Déplacement</th>
+                  <th class="text-left p-3 border">Options</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="p-3 border font-medium">Essentiel</td>
+                  <td class="p-3 border">1×/mois (10 visites/an env.)</td>
+                  <td class="p-3 border">Non inclus</td>
+                  <td class="p-3 border">Zone A incluse*</td>
+                  <td class="p-3 border">Hivernage / Remise en service</td>
+                </tr>
+                <tr class="bg-gray-50/70">
+                  <td class="p-3 border font-medium">Confort</td>
+                  <td class="p-3 border">2×/mois en saison, 1×/mois hors saison</td>
+                  <td class="p-3 border">Non inclus</td>
+                  <td class="p-3 border">Zone A incluse*</td>
+                  <td class="p-3 border">Petites pièces consommables</td>
+                </tr>
+                <tr>
+                  <td class="p-3 border font-medium">Sérénité</td>
+                  <td class="p-3 border">Hebdo en saison, 2×/mois hors saison</td>
+                  <td class="p-3 border">Inclus basiques</td>
+                  <td class="p-3 border">Zone A incluse*, priorité 24–48h</td>
+                  <td class="p-3 border">Hivernage OU remise inclus</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mobile -->
+          <div class="lg:hidden space-y-4">
+            <div class="bg-white border rounded-xl p-4">
+              <h4 class="font-semibold text-brand mb-3">Pack Essentiel</h4>
+              <div class="space-y-2 text-sm">
+                <div><span class="font-medium">Fréquence :</span> 1×/mois (10 visites/an env.)</div>
+                <div><span class="font-medium">Produits :</span> Non inclus</div>
+                <div><span class="font-medium">Déplacement :</span> Zone A incluse*</div>
+                <div><span class="font-medium">Options :</span> Hivernage / Remise en service</div>
+              </div>
+            </div>
+            <div class="bg-gray-50 border rounded-xl p-4">
+              <h4 class="font-semibold text-brand mb-3">Pack Confort</h4>
+              <div class="space-y-2 text-sm">
+                <div><span class="font-medium">Fréquence :</span> 2×/mois en saison, 1×/mois hors saison</div>
+                <div><span class="font-medium">Produits :</span> Non inclus</div>
+                <div><span class="font-medium">Déplacement :</span> Zone A incluse*</div>
+                <div><span class="font-medium">Options :</span> Petites pièces consommables</div>
+              </div>
+            </div>
+            <div class="bg-white border rounded-xl p-4">
+              <h4 class="font-semibold text-brand mb-3">Pack Sérénité</h4>
+              <div class="space-y-2 text-sm">
+                <div><span class="font-medium">Fréquence :</span> Hebdo en saison, 2×/mois hors saison</div>
+                <div><span class="font-medium">Produits :</span> Inclus basiques</div>
+                <div><span class="font-medium">Déplacement :</span> Zone A incluse*, priorité 24–48h</div>
+                <div><span class="font-medium">Options :</span> Hivernage OU remise inclus</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-4 text-xs text-gray-500">*Zone A : cœur d'agglomération / périmètre proche (ex. Bordeaux intra + communes limitrophes). Zone B/C : +10–25€ par passage selon distance. Prix indicatifs TTC. Produits chimiques, pièces et grosses réparations non inclus sauf mention. TVA : si micro-entreprise en franchise de base, « TVA non applicable, art. 293 B du CGI ».</p>
+      </div>
+    </section>
+
+    <!-- ZONES -->
+    <section id="zones" class="mx-auto max-w-6xl px-4 py-14">
+      <h3 class="text-xl font-semibold">Zones d'intervention</h3>
+      <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
+        <div class="rounded-xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Bordeaux Métropole</div>
+        <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Médoc (nord/sud)</div>
+        <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Bassin d'Arcachon</div>
+        <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Libournais</div>
+        <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Graves & Sauternes</div>
+        <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Autres sur demande</div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="mx-auto max-w-6xl px-4 pb-16">
+      <div class="rounded-2xl border p-6">
+        <h3 class="text-xl font-semibold">Contact rapide</h3>
+        <p class="mt-2 text-gray-600">Un SMS/WhatsApp avec <span class="font-medium">nom + ville + problème</span> suffit.</p>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="tel:+33PHONE" class="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 hover:bg-gray-50"> <i data-lucide="phone"></i> 07 68 18 67 49 </a>
+          <a href="https://wa.me/WHATSAPP" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-white font-medium hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
+        </div>
+        <div class="mt-6 grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
+          <div class="rounded-xl border p-4 bg-white flex items-center gap-2"><i data-lucide="shield"></i> Devis clair – matériel toutes marques</div>
+          <div class="rounded-xl border p-4 bg-white flex items-center gap-2"><i data-lucide="clock"></i> Créneaux sous 48h* selon secteur</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PIED DE PAGE -->
+    <footer class="border-t">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-xs text-gray-500 flex flex-wrap items-center justify-between gap-3">
+        <div>© <span id="year"></span> JT Piscines. Tous droits réservés.</div>
+        <div class="flex items-center gap-3">
+          <a href="cgu-cgv.html" class="hover:text-brand">CGU/CGV</a>
+          <span>•</span>
+          <a href="#" class="hover:text-brand">Mentions légales</a>
+          <span>•</span>
+          <a href="#" class="hover:text-brand">Confidentialité</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // icônes + année
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.lucide) window.lucide.createIcons();
+        const y = document.getElementById("year");
+        if (y) y.textContent = new Date().getFullYear();
+      });
+
+      // --- Carousel léger (swipe, autoplay, flèches, puces, clavier, reduced motion) ---
+      (() => {
+        const root = document.getElementById("jt-carousel");
+        if (!root) return;
+
+        const track = root.querySelector(".jt-track");
+        const slides = Array.from(root.querySelectorAll(".jt-slide"));
+        const prevBtn = root.querySelector(".jt-prev");
+        const nextBtn = root.querySelector(".jt-next");
+        const dotsWrap = root.querySelector(".jt-dots");
+
+        let index = 0;
+        let autoplay = true;
+        const delay = 4500;
+        let timer;
+
+        // dots
+        slides.forEach((_, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "h-2 w-2 rounded-full bg-white/60 ring-1 ring-black/10 hover:bg-white transition";
+          b.addEventListener("click", () => go(i, true));
+          dotsWrap.appendChild(b);
+        });
+
+        const updateDots = () => {
+          dotsWrap.querySelectorAll("button").forEach((b, i) => {
+            b.classList.toggle("bg-white", i === index);
+            b.classList.toggle("bg-white/60", i !== index);
+            b.classList.toggle("opacity-60", i !== index);
+          });
+        };
+
+        const go = (i, user = false) => {
+          index = (i + slides.length) % slides.length;
+          track.style.transform = `translateX(-${index * 100}%)`;
+          updateDots();
+          if (user) restart();
+        };
+
+        const next = () => go(index + 1);
+        const prev = () => go(index - 1);
+        prevBtn.addEventListener("click", prev);
+        nextBtn.addEventListener("click", next);
+
+        // autoplay
+        const start = () => {
+          if (autoplay) timer = setInterval(next, delay);
+        };
+        const stop = () => {
+          clearInterval(timer);
+        };
+        const restart = () => {
+          stop();
+          start();
+        };
+
+        root.addEventListener("mouseenter", stop);
+        root.addEventListener("mouseleave", start);
+        window.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
+
+        // swipe
+        let startX = 0,
+          curX = 0,
+          dragging = false;
+        const onStart = (x) => {
+          dragging = true;
+          startX = curX = x;
+          stop();
+        };
+        const onMove = (x) => {
+          if (!dragging) return;
+          curX = x;
+          const dx = curX - startX;
+          track.style.transitionDuration = "0ms";
+          track.style.transform = `translateX(calc(-${index * 100}% + ${dx}px))`;
+        };
+        const onEnd = () => {
+          if (!dragging) return;
+          const dx = curX - startX;
+          track.style.transitionDuration = "";
+          if (Math.abs(dx) > root.clientWidth * 0.15) dx < 0 ? next() : prev();
+          else go(index);
+          dragging = false;
+          start();
+        };
+        root.addEventListener("pointerdown", (e) => onStart(e.clientX));
+        window.addEventListener("pointermove", (e) => onMove(e.clientX));
+        window.addEventListener("pointerup", onEnd);
+
+        // accessibilité & motion
+        root.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowLeft") prev();
+          if (e.key === "ArrowRight") next();
+        });
+        const prefersReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (prefersReduce) {
+          autoplay = false;
+          stop();
+        }
+
+        // init
+        go(0);
+        start();
+      })();
+    </script>
+  </body>
+</html>

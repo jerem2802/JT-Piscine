@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>CGU/CGV — JT Piscines</title>
+    <meta name="description" content="Conditions Générales d'Utilisation et de Vente - JT Piscines - Dépannage & entretien piscine (Bordeaux, Médoc, Bassin d'Arcachon)." />
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>💧</text></svg>" />
+
+    <!-- Canonical & OG -->
+    <link rel="canonical" href="https://tondomaine.fr/cgu-cgv.html" />
+    <meta property="og:title" content="CGU/CGV — JT Piscines" />
+    <meta property="og:description" content="Conditions Générales d'Utilisation et de Vente - JT Piscines." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://tondomaine.fr/cgu-cgv.html" />
+    <meta property="og:image" content="https://tondomaine.fr/og.jpg" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: "#0891b2" } } } } };
+    </script>
+    <!-- Lucide icons -->
+    <script defer src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+      .glass {
+        backdrop-filter: saturate(150%) blur(6px);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      /* mise en forme douce pour le texte juridique */
+      .doc p {
+        margin-top: 0.6rem;
+      }
+      .doc ul {
+        list-style: disc;
+        padding-left: 1.25rem;
+      }
+      .doc li + li {
+        margin-top: 0.25rem;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-white text-gray-900">
+    <!-- BARRE HAUTE -->
+    <header class="sticky top-0 z-40 bg-white/80 glass border-b">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a class="flex items-center gap-2 font-semibold tracking-tight" href="index.html">
+          <span class="inline-block h-3 w-3 rounded-full bg-brand"></span>
+          <span>JT Piscines</span>
+        </a>
+
+        <!-- NAV desktop -->
+        <nav class="hidden sm:flex items-center gap-6 text-sm">
+          <a class="hover:text-brand transition-colors" href="index.html#services">Services</a>
+          <a class="hover:text-brand transition-colors" href="index.html#contrats">Contrats d'entretien</a>
+          <a class="hover:text-brand transition-colors" href="index.html#zones">Zones</a>
+          <a class="hover:text-brand transition-colors" href="index.html#contact">Contact</a>
+          <!-- NEW (active) -->
+          <a class="text-brand font-medium" href="cgu-cgv.html" aria-current="page" rel="nofollow">CGU/CGV</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+          <!-- Bouton CGU/CGV visible en mobile -->
+          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
+
+          <a href="tel:+33PHONE" class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
+          <a href="https://wa.me/WHATSAPP" class="inline-flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="mx-auto max-w-4xl px-4 py-12">
+      <div class="mb-8">
+        <a href="index.html" class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-brand mb-4">
+          <i data-lucide="arrow-left" class="h-4 w-4"></i>
+          Retour à l'accueil
+        </a>
+        <h1 class="text-3xl font-bold text-gray-900">Conditions Générales d'Utilisation et de Vente</h1>
+        <p class="mt-2 text-gray-600">Dernière mise à jour : Septembre 2025</p>
+      </div>
+
+      <!-- Sommaire rapide -->
+      <aside class="mb-8 rounded-xl border bg-gray-50 p-4 text-sm">
+        <div class="font-medium mb-2 text-gray-800">Sommaire</div>
+        <nav class="grid sm:grid-cols-2 gap-2">
+          <a href="#art1" class="hover:text-brand">Art. 1 — Objet</a>
+          <a href="#art2" class="hover:text-brand">Art. 2 — Services</a>
+          <a href="#art3" class="hover:text-brand">Art. 3 — Tarifs & paiement</a>
+          <a href="#art4" class="hover:text-brand">Art. 4 — Prestataire</a>
+          <a href="#art5" class="hover:text-brand">Art. 5 — Client</a>
+          <a href="#art6" class="hover:text-brand">Art. 6 — Garanties & limites</a>
+          <a href="#art7" class="hover:text-brand">Art. 7 — Résiliation</a>
+          <a href="#art8" class="hover:text-brand">Art. 8 — Données</a>
+          <a href="#art9" class="hover:text-brand">Art. 9 — Litiges</a>
+          <a href="#art10" class="hover:text-brand">Art. 10 — Réclamations</a>
+          <a href="#art11" class="hover:text-brand">Art. 11 — Intempéries</a>
+          <a href="#art12" class="hover:text-brand">Art. 12 — Rétractation</a>
+          <a href="#art13" class="hover:text-brand">Art. 13 — Médiation</a>
+          <a href="#art14" class="hover:text-brand">Art. 14 — Preuves</a>
+          <a href="#art15" class="hover:text-brand">Art. 15 — Sous-traitance</a>
+          <a href="#art16" class="hover:text-brand">Art. 16 — Mentions</a>
+        </nav>
+      </aside>
+
+      <div class="doc max-w-none">
+        <!-- ARTICLE 1 -->
+        <section id="art1" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 1 — Objet et champ d'application</h2>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <p class="mb-4">Les présentes Conditions Générales d'Utilisation et de Vente (CGU/CGV) régissent les relations contractuelles entre :</p>
+            <ul class="space-y-2">
+              <li><strong>JT Piscines</strong>, entreprise de dépannage et entretien de piscines</li>
+              <li>Secteur d'intervention : Bordeaux, Médoc, Bassin d'Arcachon et environs</li>
+              <li>Contact : 07 68 18 67 49 — contact@jt-piscines.fr</li>
+            </ul>
+            <p class="mt-4">Et toute personne physique ou morale faisant appel à nos services de dépannage, maintenance, fourniture/pose de pièces et contrats d'entretien de piscines.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 2 -->
+        <section id="art2" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 2 — Services proposés</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-white border rounded-lg p-4">
+              <h3 class="font-medium text-brand mb-2">Interventions ponctuelles</h3>
+              <ul class="text-sm">
+                <li>• Dépannage urgent</li>
+                <li>• Filtration et hydraulique</li>
+                <li>• Régulation et chimie</li>
+                <li>• Électricité et coffrets</li>
+                <li>• Remises en service / Hivernage</li>
+                <li>• Rénovations légères (hors décennale)</li>
+              </ul>
+            </div>
+            <div class="bg-white border rounded-lg p-4">
+              <h3 class="font-medium text-brand mb-2">Contrats d'entretien</h3>
+              <ul class="text-sm">
+                <li>• Pack Essentiel (59€/mois)</li>
+                <li>• Pack Confort (99€/mois)</li>
+                <li>• Pack Sérénité (179€/mois)</li>
+                <li>• Passages réguliers programmés</li>
+                <li>• Maintenance préventive</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ARTICLE 3 -->
+        <section id="art3" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 3 — Tarification et modalités de paiement</h2>
+          <div class="bg-blue-50 border border-blue-200 p-6 rounded-lg">
+            <h3 class="font-medium mb-3">Tarifs des interventions</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Déplacement :</strong> Inclus en Zone A (Bordeaux métropole et communes limitrophes).</li>
+              <li><strong>Zone B/C :</strong> Supplément de 10–25€ selon la distance.</li>
+              <li><strong>Main d'œuvre :</strong> Tarif horaire communiqué sur devis ou au démarrage de l’intervention.</li>
+              <li><strong>Pièces et consommables :</strong> Au coût, sauf mention contraire.</li>
+            </ul>
+
+            <h3 class="font-medium mt-4 mb-3">Modalités de paiement</h3>
+            <ul class="space-y-2 text-sm">
+              <li>• Dépannages : paiement à l'intervention.</li>
+              <li>• Contrats d'entretien : prélèvement mensuel ou paiement annuel.</li>
+              <li>• Moyens acceptés : espèces, chèque, virement, carte bancaire.</li>
+              <li>• Retard de paiement : pénalités de retard à hauteur de <u>3× le taux d’intérêt légal</u> (consommateurs : pas d’indemnité forfaitaire de 40€).</li>
+            </ul>
+
+            <h3 class="font-medium mt-4 mb-3">Frais d'attente / absence / accès</h3>
+            <ul class="space-y-2 text-sm">
+              <li><strong>Accès non disponible :</strong> si le client ne permet pas l’accès à la piscine/local technique au créneau convenu (portail fermé, clés absentes, code non fourni), <u>le déplacement est dû</u>. Une nouvelle intervention sera reprogrammée.</li>
+              <li><strong>Absence du client :</strong> lorsque la présence est requise (devis, remise de clés, validation), l’absence au créneau entraîne la facturation du <u>déplacement</u>.</li>
+              <li><strong>Attente sur site :</strong> au-delà de 15 min imputables au client, facturation au <u>temps passé</u> au tarif horaire en vigueur (tranche entamée).</li>
+              <li><strong>Annulation tardive :</strong> toute annulation/modification à moins de 24h du créneau peut entraîner la facturation du <u>déplacement</u>.</li>
+            </ul>
+
+            <h3 class="font-medium mt-4 mb-3">Révision des prix</h3>
+            <p class="text-sm text-gray-700">Les prix des contrats d’entretien peuvent être révisés à la date anniversaire en fonction de l’évolution des coûts (consommables, carburants, fournisseurs). Le client est informé au moins 30 jours avant l’entrée en vigueur.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 4 -->
+        <section id="art4" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 4 — Obligations du prestataire</h2>
+          <div class="space-y-4">
+            <div class="border-l-4 border-brand pl-4">
+              <h3 class="font-medium">Qualité des prestations</h3>
+              <p class="text-sm text-gray-600">JT Piscines s'engage à réaliser les prestations avec le soin et la diligence d'un professionnel qualifié, dans le respect des règles de l'art (obligation de moyens).</p>
+            </div>
+            <div class="border-l-4 border-brand pl-4">
+              <h3 class="font-medium">Délais d'intervention</h3>
+              <p class="text-sm text-gray-600">Créneaux sous 48h selon période et zone. Les urgences sont traitées en priorité.</p>
+            </div>
+            <div class="border-l-4 border-brand pl-4">
+              <h3 class="font-medium">Information et conseil</h3>
+              <p class="text-sm text-gray-600">Rapport d'interventions (contrats d'entretien), communication transparente sur l'état de l'installation, les réparations nécessaires et les conseils d'entretien.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ARTICLE 5 -->
+        <section id="art5" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 5 — Obligations du client</h2>
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <ul class="space-y-3">
+              <li><strong>Accès aux installations :</strong> Garantir un accès libre et sécurisé à la piscine et au local technique (clés, codes, animaux maîtrisés).</li>
+              <li><strong>Eau et chimie :</strong> Maintenir un niveau d’eau suffisant et l’accès au point d’eau/électricité. En cas d’eau très déséquilibrée (pH, TAC, TH, chlore), des <u>traitements de choc</u> et <u>visites supplémentaires</u> peuvent être nécessaires et facturés.</li>
+              <li><strong>Conformité électrique/hydraulique :</strong> Garantir des installations conformes (alimentation, protections, liaisons, vannes). Toute non-conformité identifiée devra être corrigée avant certaines prestations.</li>
+              <li><strong>Déclarations :</strong> Signaler toute fuite présumée, perte d’eau anormale, bruit de pompe, disjonctions, coloration d’eau, intrusion de débris, dégâts après intempéries.</li>
+              <li><strong>Sécurité piscine :</strong> Maintenir en état les dispositifs réglementaires (barrière, couverture, alarme). JT Piscines peut refuser/suspendre l’intervention en cas de danger.</li>
+              <li><strong>Présence :</strong> Être présent ou représenté lors des interventions si nécessaire.</li>
+              <li><strong>Paiement :</strong> Respecter les échéances de paiement convenues.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ARTICLE 6 -->
+        <section id="art6" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 6 — Garanties, limites & responsabilité</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <h3 class="font-medium text-green-700 mb-3">Garanties</h3>
+              <ul class="text-sm space-y-2">
+                <li>• Main d’œuvre : garantie 3 mois sur la <u>même panne</u> après intervention (hors pièces/consommables et hors causes externes).</li>
+                <li>• Pièces neuves : garantie constructeur (conditions et exclusions du fabricant).</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="font-medium text-orange-700 mb-3">Limites & exclusions</h3>
+              <ul class="text-sm space-y-2">
+                <li>• Vétusté, usure, corrosion, calcaire, défaut d’entretien, mauvaise utilisation, installation non conforme.</li>
+                <li>• Événements extérieurs : intempéries (tempête, grêle, orage, inondation), chutes de débris, intrusion végétale/animale, pollution, coupures de courant.</li>
+                <li>• Paramètres d’eau non conformes (pH/TAC/TH/Chlore) entraînant algues/taches/décolorations.</li>
+                <li>• Vices cachés ou défauts préexistants révélés à l’intervention.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="mt-4">
+            <h3 class="font-medium text-orange-700 mb-3">Responsabilité</h3>
+            <p class="text-sm text-gray-700">
+              JT Piscines répond d’une <strong>obligation de moyens</strong>. La responsabilité est limitée au <u>montant de la prestation en cause</u> et ne couvre pas les préjudices indirects (perte d’usage, jouissance, etc.).
+              <strong>Après notre passage, tout dommage résultant d’un évènement extérieur (ex. tempête) n’engage pas notre responsabilité.</strong>
+            </p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 7 -->
+        <section id="art7" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 7 — Résiliation et annulation</h2>
+          <div class="bg-yellow-50 border border-yellow-200 p-6 rounded-lg">
+            <h3 class="font-medium mb-3">Contrats d'entretien</h3>
+            <ul class="space-y-2 text-sm">
+              <li>• Engagement annuel renouvelable par tacite reconduction.</li>
+              <li>• Résiliation à l’échéance avec préavis de 30 jours par LRAR ou e-mail avec accusé de réception.</li>
+              <li>• En cas d’impossibilité persistante d’accès ou d’impayés répétés, suspension puis résiliation de plein droit après mise en demeure restée sans effet 8 jours.</li>
+            </ul>
+            <h3 class="font-medium mt-4 mb-3">Interventions ponctuelles</h3>
+            <ul class="space-y-2 text-sm">
+              <li>• Annulation ≥ 24h : sans frais. &lt; 24h : <u>déplacement dû</u>.</li>
+              <li>• Urgences confirmées et préparations spécifiques (pièces commandées) : frais engagés dus si annulation par le client.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ARTICLE 8 -->
+        <section id="art8" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 8 — Protection des données</h2>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <p class="mb-4">Conformément au RGPD, vos données personnelles sont collectées pour :</p>
+            <ul class="space-y-2 mb-4">
+              <li>La réalisation des prestations contractuelles</li>
+              <li>La gestion de la relation client</li>
+              <li>Le respect des obligations légales et comptables</li>
+            </ul>
+            <p class="text-sm text-gray-600">Droits : accès, rectification, suppression, portabilité. Contact : 07 68 18 67 49 — contact@jt-piscines.fr</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 9 -->
+        <section id="art9" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 9 — Litiges et juridiction</h2>
+          <div class="border border-gray-200 p-6 rounded-lg text-sm">
+            <p class="mb-3"><strong>Médiation :</strong> En cas de litige, une solution amiable est recherchée prioritairement. Voir l’Article 13 (Médiation de la consommation).</p>
+            <p class="mb-3"><strong>Juridiction compétente :</strong> À défaut d'accord amiable, et sous réserve des dispositions protectrices du consommateur sur la compétence territoriale, les tribunaux de Bordeaux peuvent être compétents.</p>
+            <p class="text-gray-600"><strong>Droit applicable :</strong> Droit français.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 10 -->
+        <section id="art10" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 10 — Acceptation & réclamations</h2>
+          <div class="bg-gray-50 p-6 rounded-lg text-sm">
+            <p>Les prestations sont réputées <strong>acceptées sans réserve</strong> à la fin de l’intervention, sauf mention écrite immédiate. Toute réclamation technique doit être formulée par écrit <u>dans les 72h</u> avec photos/vidéos. Passé ce délai, l’intervention est réputée conforme.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 11 -->
+        <section id="art11" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 11 — Force majeure / Intempéries</h2>
+          <div class="border p-6 rounded-lg text-sm">
+            <p>En cas de force majeure (au sens de la loi et de la jurisprudence) ou d’intempéries empêchant l’exécution (pluie, orage, vent violent), JT Piscines peut <u>reporter</u> l’intervention sans indemnité. Les <strong>détériorations ou désordres postérieurs</strong> liés à ces évènements n’engagent pas notre responsabilité.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 12 -->
+        <section id="art12" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 12 — Rétractation (ventes à distance)</h2>
+          <div class="bg-blue-50 p-6 rounded-lg text-sm">
+            <p>Pour les consommateurs et en cas de commande conclue à distance, droit de rétractation de <strong>14 jours</strong>, sauf <u>intervention urgente</u> demandée avant la fin du délai avec <strong>renonciation expresse</strong> au droit de rétractation. Les prestations déjà réalisées restent dues.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 13 -->
+        <section id="art13" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 13 — Médiation de la consommation</h2>
+          <div class="bg-gray-50 p-6 rounded-lg text-sm">
+            <p>Après démarche préalable écrite auprès de JT Piscines, tout consommateur peut saisir gratuitement un <strong>Médiateur de la consommation</strong> compétent</p>
+            <ul class="list-disc pl-6 mt-2"></ul>
+          </div>
+        </section>
+
+        <!-- ARTICLE 14 -->
+        <section id="art14" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 14 — Preuves (photos/rapports)</h2>
+          <div class="border p-6 rounded-lg text-sm">
+            <p>Le client autorise la prise de <strong>photos</strong> techniques avant/après (preuve de l’état, traçabilité), conservées le temps nécessaire au suivi et à la garantie, puis supprimées selon notre politique interne.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 15 -->
+        <section id="art15" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 15 — Sous-traitance</h2>
+          <div class="bg-gray-50 p-6 rounded-lg text-sm">
+            <p>JT Piscines peut recourir à des sous-traitants qualifiés, tout en demeurant responsable de la bonne exécution des prestations.</p>
+          </div>
+        </section>
+
+        <!-- ARTICLE 16 -->
+        <section id="art16" class="mb-8">
+          <h2 class="text-xl font-semibold text-gray-900 mb-4">Article 16 — Mentions légales & assurances</h2>
+          <div class="bg-blue-50 p-6 rounded-lg text-sm">
+            <ul class="space-y-1">
+              <li><strong>Statut :</strong> [Micro-entreprise / Société], SIREN [xxxxxxx], RCS/RM [Ville]. Siège : [Adresse complète].</li>
+              <li><strong>TVA :</strong> “TVA non applicable, art. 293 B du CGI” (si micro en franchise de base).</li>
+              <li><strong>Assurance RC pro :</strong> [Assureur, n° police] — Attestation sur demande.</li>
+              <li><strong>Hébergeur du site :</strong> [Nom, adresse].</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="mt-12 p-6 bg-brand/5 rounded-xl border border-brand/20">
+          <h2 class="text-xl font-semibold text-brand mb-4">Contact et informations</h2>
+          <div class="grid md:grid-cols-2 gap-4 text-sm">
+            <div>
+              <p><strong>JT Piscines</strong></p>
+              <p>Dépannage & entretien piscines</p>
+              <p>Secteur : Bordeaux & périphérie, Médoc, Bassin d'Arcachon</p>
+            </div>
+            <div>
+              <p><strong>Tél :</strong> 07 68 18 67 49</p>
+              <p><strong>WhatsApp :</strong> Disponible</p>
+              <p><strong>Email :</strong> contact@jt-piscines.fr</p>
+            </div>
+          </div>
+          <p class="mt-4 text-xs text-gray-500">TVA : « TVA non applicable, art. 293 B du CGI ».</p>
+        </section>
+      </div>
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="border-t mt-12">
+      <div class="mx-auto max-w-6xl px-4 py-8 text-xs text-gray-500 flex flex-wrap items-center justify-between gap-3">
+        <div>© <span id="year"></span> JT Piscines. Tous droits réservés.</div>
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="hover:text-brand">Accueil</a>
+          <span>•</span>
+          <a href="#" class="hover:text-brand">Mentions légales</a>
+          <span>•</span>
+          <a href="#" class="hover:text-brand">Confidentialité</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // icônes + année
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.lucide) window.lucide.createIcons();
+        const y = document.getElementById("year");
+        if (y) y.textContent = new Date().getFullYear();
+      });
+    </script>
+  </body>
+</html>
