@@ -222,7 +222,7 @@
         <p class="mt-2 text-gray-600 max-w-3xl">Des passages réguliers pour garder une eau claire et un matériel qui dure. Les urgences et dépannages restent prioritaires ; on choisit un contrat seulement si ça a du sens pour votre bassin.</p>
 
         <!-- Cartes packs -->
-        <div class="mt-6 grid md:grid-cols-3 gap-4 items-stretch">
+        <div class="mt-6 grid md:grid-cols-3 gap-6 items-stretch">
           <!-- Essentiel -->
           <div class="rounded-2xl border bg-gray-50 p-5 flex flex-col h-full">
             <div>
@@ -392,6 +392,74 @@
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Graves & Sauternes</div>
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Autres sur demande</div>
       </div>
+      <!-- ====== ZONES D'INTERVENTION + CARTE ====== -->
+      <section id="zones" class="mx-auto max-w-6xl px-4 py-10">
+        Déplacements possibles sur devis en dehors de cette zone.</p>
+
+        <!-- Carte -->
+        <div id="zoneMap" class="w-full rounded-2xl border border-gray-200 overflow-hidden aspect-[4/3] sm:h-96"></div>
+      </section>
+
+      <!-- Leaflet CSS/JS (CDN) -->
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+      <script>
+        // Couleur principale (ton "brand")
+        const BRAND = "#0891b2";
+
+        // Init carte
+        const map = L.map("zoneMap", {
+          scrollWheelZoom: false,
+          tap: false,
+        });
+
+        // Tuiles OSM
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          maxZoom: 19,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        }).addTo(map);
+
+        // Polygone de zone (approx Bordeaux / Médoc / Bassin d’Arcachon)
+        const zoneCoords = [
+          [45.45, -1.25], // Pointe Nord Médoc (côte)
+          [45.45, -0.35], // Nord-Est (blayais)
+          [44.95, -0.2], // Libournais
+          [44.55, -0.3], // Sud-Est (Langon env.)
+          [44.35, -1.25], // Sud-Ouest (Bassin d’Arcachon)
+          [44.85, -1.35], // Côte Médoc
+        ];
+
+        const zone = L.polygon(zoneCoords, {
+          color: BRAND,
+          weight: 2,
+          fillColor: BRAND,
+          fillOpacity: 0.15,
+          lineJoin: "round",
+        }).addTo(map);
+
+        // Marqueurs villes clés (facultatif)
+        const cities = [
+          { name: "Bordeaux", pos: [44.8378, -0.5792] },
+          { name: "Mérignac", pos: [44.8431, -0.6577] },
+          { name: "Arcachon", pos: [44.6583, -1.17] },
+          { name: "Lacanau", pos: [45.0057, -1.0808] },
+        ];
+        cities.forEach((c) =>
+          L.circleMarker(c.pos, {
+            radius: 5,
+            color: BRAND,
+            fillColor: BRAND,
+            fillOpacity: 0.9,
+            weight: 2,
+          })
+            .bindPopup(c.name)
+            .addTo(map)
+        );
+
+        // Adapter la vue à la zone
+        map.fitBounds(zone.getBounds(), { padding: [20, 20] });
+      </script>
     </section>
 
     <!-- CONTACT -->
