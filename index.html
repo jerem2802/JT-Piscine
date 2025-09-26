@@ -1,12 +1,11 @@
-<!-- index.html — Site vitrine JT Piscines (HTML/Tailwind, 1 fichier) -->
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <!-- Viewport stable Android/iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Viewport corrigé pour Samsung A55 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover" />
 
-    <title>JT Piscines — Dépannage & Contrats d’entretien (Bordeaux, Médoc, Bassin)</title>
+    <title>JT Piscines — Dépannage & Contrats d'entretien (Bordeaux, Médoc, Bassin)</title>
     <meta name="description" content="Dépannage rapide piscine : filtration, pompes, coffrets, régulation pH/RedOx. Interventions sous 48h selon secteur. Contrats d'entretien disponibles." />
 
     <!-- Favicon -->
@@ -15,7 +14,7 @@
     <!-- Canonical & Open Graph (SEO) -->
     <link rel="canonical" href="https://tondomaine.fr/" />
     <meta property="og:title" content="JT Piscines — Dépannage & Contrats (Bordeaux, Médoc, Bassin)" />
-    <meta property="og:description" content="Dépannage rapide, contrats d’entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
+    <meta property="og:description" content="Dépannage rapide, contrats d'entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tondomaine.fr/" />
     <meta property="og:image" content="https://tondomaine.fr/og.jpg" />
@@ -43,21 +42,73 @@
       }
     </script>
 
+    <!-- Script de détection Samsung -->
+    <script>
+      (function () {
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf("samsung") > -1 || ua.indexOf("sm-") > -1) {
+          document.documentElement.classList.add("is-samsung");
+        }
+      })();
+    </script>
+
     <style>
       /* micro améliorations */
       .glass {
         backdrop-filter: saturate(150%) blur(6px);
       }
+
+      /* FIX SAMSUNG A55 - Forcer les bonnes tailles */
       html {
+        font-size: 16px !important;
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
         scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
         max-width: 100%;
         overflow-x: hidden;
       }
+
       body {
         min-width: 320px;
-      } /* baseline iPhone SE : évite le zoom/fit Samsung */
+        -webkit-text-size-adjust: 100% !important;
+        text-size-adjust: 100% !important;
+      }
+
+      /* Reset agressif pour Samsung */
+      * {
+        max-width: 100vw;
+      }
+
+      /* Classes Samsung spécifiques */
+      .is-samsung body {
+        zoom: reset !important;
+        transform: scale(1) !important;
+      }
+
+      /* Fix tailles de texte sur mobile haute densité */
+      @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (max-width: 640px) {
+        body {
+          font-size: 16px !important;
+        }
+        h1 {
+          font-size: clamp(1.75rem, 4vw, 2.5rem) !important;
+        }
+        h2 {
+          font-size: clamp(1.5rem, 3.5vw, 2rem) !important;
+        }
+        h3 {
+          font-size: clamp(1.25rem, 3vw, 1.5rem) !important;
+        }
+        .text-3xl {
+          font-size: clamp(1.5rem, 3.5vw, 1.875rem) !important;
+        }
+        .text-4xl {
+          font-size: clamp(1.75rem, 4vw, 2.25rem) !important;
+        }
+        .text-5xl {
+          font-size: clamp(2rem, 4.5vw, 3rem) !important;
+        }
+      }
 
       /* éviter la sélection/drag pendant le swipe */
       .jt-track,
@@ -443,13 +494,13 @@
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        // Polygone de zone (approx Bordeaux / Médoc / Bassin d’Arcachon)
+        // Polygone de zone (approx Bordeaux / Médoc / Bassin d'Arcachon)
         const zoneCoords = [
           [45.45, -1.25], // Pointe Nord Médoc (côte)
           [45.45, -0.35], // Nord-Est (blayais)
           [44.95, -0.2], // Libournais
           [44.55, -0.3], // Sud-Est (Langon env.)
-          [44.35, -1.25], // Sud-Ouest (Bassin d’Arcachon)
+          [44.35, -1.25], // Sud-Ouest (Bassin d'Arcachon)
           [44.85, -1.35], // Côte Médoc
         ];
 
