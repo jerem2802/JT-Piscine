@@ -3,6 +3,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
+    <!-- Viewport stable Android/iOS -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>JT Piscines — Dépannage & Contrats d’entretien (Bordeaux, Médoc, Bassin)</title>
@@ -49,13 +50,22 @@
       }
       html {
         scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
       }
+      body {
+        min-width: 320px;
+      } /* baseline iPhone SE : évite le zoom/fit Samsung */
+
       /* éviter la sélection/drag pendant le swipe */
       .jt-track,
       .jt-slide {
         user-select: none;
         -webkit-user-drag: none;
       }
+
       /* fallback si lucide tarde */
       i[data-lucide]::before {
         content: "◆";
@@ -65,10 +75,20 @@
       svg.lucide + i[data-lucide]::before {
         content: "";
       }
+
+      /* Anti auto-zoom Android : assure >=16px sur champs en mobile */
+      @media (max-width: 640px) {
+        input,
+        select,
+        textarea,
+        button {
+          font-size: 16px !important;
+        }
+      }
     </style>
   </head>
 
-  <body class="min-h-screen bg-white text-gray-900">
+  <body class="min-h-screen bg-white text-gray-900 overflow-x-hidden">
     <!-- BARRE HAUTE -->
     <header class="sticky top-0 z-40 bg-white/80 glass border-b">
       <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -87,12 +107,13 @@
           <a class="hover:text-brand transition-colors" href="cgu-cgv.html" rel="nofollow">CGU/CGV</a>
         </nav>
 
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-2 flex-nowrap">
           <!-- Bouton CGU/CGV visible en mobile -->
-          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
+          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-2.5 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
 
-          <a id="callBtn" href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
-          <a id="waBtn" href="https://wa.me/+33768186749" class="inline-flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
+          <a id="callBtn" href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl border px-2.5 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
+          <!-- WhatsApp: pas de '+' dans wa.me -->
+          <a id="waBtn" href="https://wa.me/33768186749" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-brand px-2.5 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
         </div>
       </div>
     </header>
@@ -109,7 +130,7 @@
           <p class="mt-4 text-gray-600 max-w-xl">Entreprise locale spécialisée dans le diagnostic, les contrats de maintenance et la remise en service rapide de votre bassin.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-white font-medium hover:brightness-95"> <i data-lucide="phone"></i> Demander une intervention </a>
-            <a href="#services" class="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 hover:bg-gray-50"> Voir les services </a>
+            <a href="#services" class="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 hover:bg-gray-50">Voir les services</a>
           </div>
           <div class="mt-6 flex items-center gap-6 text-sm text-gray-500">
             <div class="flex items-center gap-2"><i data-lucide="shield"></i> Travail propre & soigné</div>
@@ -120,7 +141,8 @@
 
         <!-- CAROUSEL -->
         <div class="relative">
-          <div id="jt-carousel" class="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border shadow-sm bg-gray-50" role="region" aria-label="Carrousel de piscines" tabindex="0">
+          <!-- tabindex -1 pour éviter un focus auto qui peut provoquer un scroll initial -->
+          <div id="jt-carousel" class="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border shadow-sm bg-gray-50" role="region" aria-label="Carrousel de piscines" tabindex="-1">
             <!-- piste -->
             <div class="jt-track flex h-full w-full transition-transform duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform">
               <div class="jt-slide shrink-0 grow-0 basis-full relative">
@@ -385,16 +407,17 @@
     <section id="zones" class="mx-auto max-w-6xl px-4 py-14">
       <h3 class="text-xl font-semibold">Zones d'intervention</h3>
       <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm">
-        <div class="rounded-xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Bordeaux Métropole</div>
+        <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Bordeaux Métropole</div>
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Médoc (nord/sud)</div>
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Bassin d'Arcachon</div>
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Libournais</div>
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Graves & Sauternes</div>
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Autres sur demande</div>
       </div>
+
       <!-- ====== ZONES D'INTERVENTION + CARTE ====== -->
-      <section id="zones" class="mx-auto max-w-6xl px-4 py-10">
-        Déplacements possibles sur devis en dehors de cette zone.</p>
+      <section id="zones-carte" class="mx-auto max-w-6xl px-4 py-10">
+        <p class="text-sm text-gray-600">Déplacements possibles sur devis en dehors de cette zone.</p>
 
         <!-- Carte -->
         <div id="zoneMap" class="w-full rounded-2xl border border-gray-200 overflow-hidden aspect-[4/3] sm:h-96"></div>
@@ -469,7 +492,7 @@
         <p class="mt-2 text-gray-600">Un SMS / WhatsApp avec <span class="font-medium">nom + ville + problème</span> suffit.</p>
         <div class="mt-4 flex flex-wrap gap-3">
           <a href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl border px-4 py-2.5 hover:bg-gray-50"> <i data-lucide="phone"></i> 07 68 18 67 49 </a>
-          <a href="https://wa.me/+33768186749" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-white font-medium hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
+          <a href="https://wa.me/33768186749" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2.5 text-white font-medium hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
         </div>
         <div class="mt-6 grid sm:grid-cols-2 gap-4 text-sm text-gray-600">
           <div class="rounded-xl border p-4 bg-white flex items-center gap-2"><i data-lucide="shield"></i> Devis clair – matériel toutes marques</div>
@@ -483,7 +506,7 @@
       <div class="mx-auto max-w-6xl px-4 py-8 text-xs text-gray-500 flex flex-wrap items-center justify-between gap-3">
         <div>© <span id="year"></span> JT Piscines. Tous droits réservés.</div>
         <div class="flex items-center gap-3">
-          <a href="cgu-cgv.html" class="hover:text-blue-600 text-brand font-bold "> Lire les conditions générales CGU/CGV</a>
+          <a href="cgu-cgv.html" class="hover:text-blue-600 text-brand font-bold">Lire les conditions générales CGU/CGV</a>
           <span>•</span>
           <a href="#" class="hover:text-brand">Mentions légales</a>
           <span>•</span>
@@ -493,6 +516,11 @@
     </footer>
 
     <script>
+      // Empêche le navigateur de "restaurer" un scroll antérieur (retour arrière)
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
       // icônes + année
       window.addEventListener("DOMContentLoaded", () => {
         if (window.lucide) window.lucide.createIcons();
