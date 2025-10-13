@@ -1,34 +1,27 @@
-<!-- index.html — Site vitrine JT Piscines (HTML/Tailwind, 1 fichier) -->
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <!-- Viewport stable Android/iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
-    <title>JT Piscines — Dépannage & Contrats d’entretien (Bordeaux, Médoc, Bassin)</title>
+    <title>JT Piscines — Dépannage & Contrats d'entretien (Bordeaux, Médoc, Bassin)</title>
     <meta name="description" content="Dépannage rapide piscine : filtration, pompes, coffrets, régulation pH/RedOx. Interventions sous 48h selon secteur. Contrats d'entretien disponibles." />
 
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>💧</text></svg>" />
 
-    <!-- Canonical & Open Graph (SEO) -->
     <link rel="canonical" href="https://tondomaine.fr/" />
     <meta property="og:title" content="JT Piscines — Dépannage & Contrats (Bordeaux, Médoc, Bassin)" />
-    <meta property="og:description" content="Dépannage rapide, contrats d’entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
+    <meta property="og:description" content="Dépannage rapide, contrats d'entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tondomaine.fr/" />
     <meta property="og:image" content="https://tondomaine.fr/og.jpg" />
 
-    <!-- Tailwind CDN (zéro build) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: "#0891b2" } } } } };
     </script>
-    <!-- Lucide icons -->
     <script defer src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- SEO LocalBusiness -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -44,29 +37,18 @@
     </script>
 
     <style>
-      /* micro améliorations */
       .glass {
         backdrop-filter: saturate(150%) blur(6px);
       }
       html {
         scroll-behavior: smooth;
         -webkit-text-size-adjust: 100%;
-        text-size-adjust: 100%;
-        max-width: 100%;
         overflow-x: hidden;
       }
       body {
-        min-width: 320px;
-      } /* baseline iPhone SE : évite le zoom/fit Samsung */
-
-      /* éviter la sélection/drag pendant le swipe */
-      .jt-track,
-      .jt-slide {
-        user-select: none;
-        -webkit-user-drag: none;
+        overflow-x: hidden;
+        position: relative;
       }
-
-      /* fallback si lucide tarde */
       i[data-lucide]::before {
         content: "◆";
         font-size: 0.9em;
@@ -75,45 +57,54 @@
       svg.lucide + i[data-lucide]::before {
         content: "";
       }
-
-      /* Anti auto-zoom Android : assure >=16px sur champs en mobile */
       @media (max-width: 640px) {
         input,
         select,
         textarea,
         button {
-          font-size: 16px !important;
+          font-size: 16px;
         }
+      }
+
+      /* Fix pour éviter le scroll automatique au chargement */
+      html:focus-within {
+        scroll-behavior: smooth;
+      }
+
+      /* Empêcher le débordement horizontal */
+      * {
+        max-width: 100%;
+      }
+
+      html,
+      body {
+        width: 100%;
+        overflow-x: hidden;
       }
     </style>
   </head>
 
-  <body class="min-h-screen bg-white text-gray-900 overflow-x-hidden">
+  <body class="min-h-[100svh] bg-white text-gray-900 overflow-x-hidden" style="width: 100%; position: relative">
     <!-- BARRE HAUTE -->
     <header class="sticky top-0 z-40 bg-white/80 glass border-b">
-      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between flex-wrap gap-2">
         <a class="flex items-center gap-2 font-semibold tracking-tight" href="#">
           <span class="inline-block h-3 w-3 rounded-full bg-brand"></span>
           <span>JT Piscines</span>
         </a>
 
-        <!-- NAV desktop -->
         <nav class="hidden sm:flex items-center gap-6 text-sm">
           <a class="hover:text-brand transition-colors" href="#services">Services</a>
           <a class="hover:text-brand transition-colors" href="#contrats">Contrats d'entretien</a>
           <a class="hover:text-brand transition-colors" href="#zones">Zones</a>
           <a class="hover:text-brand transition-colors" href="#contact">Contact</a>
-          <!-- NEW -->
           <a class="hover:text-brand transition-colors" href="cgu-cgv.html" rel="nofollow">CGU/CGV</a>
         </nav>
 
-        <div class="flex items-center gap-2 flex-nowrap">
-          <!-- Bouton CGU/CGV visible en mobile -->
-          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-2.5 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
-
-          <a id="callBtn" href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl border px-2.5 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
-          <!-- WhatsApp: pas de '+' dans wa.me -->
-          <a id="waBtn" href="https://wa.me/33768186749" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-brand px-2.5 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
+        <div class="flex items-center gap-2">
+          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
+          <a id="callBtn" href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
+          <a id="waBtn" href="https://wa.me/33768186749" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
         </div>
       </div>
     </header>
@@ -140,11 +131,9 @@
         </div>
 
         <!-- CAROUSEL -->
-        <div class="relative">
-          <!-- tabindex -1 pour éviter un focus auto qui peut provoquer un scroll initial -->
-          <div id="jt-carousel" class="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border shadow-sm bg-gray-50" role="region" aria-label="Carrousel de piscines" tabindex="-1">
-            <!-- piste -->
-            <div class="jt-track flex h-full w-full transition-transform duration-800 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform">
+        <div class="relative w-full">
+          <div id="jt-carousel" class="relative aspect-[4/3] w-full max-w-full rounded-2xl overflow-hidden border shadow-sm bg-gray-50" role="region" aria-label="Carrousel de piscines">
+            <div class="jt-track flex h-full w-full transition-transform duration-700 ease-in-out">
               <div class="jt-slide shrink-0 grow-0 basis-full relative">
                 <img src="images/piscine1.png" alt="Piscine contemporaine familiale" class="h-full w-full object-cover" />
               </div>
@@ -164,14 +153,11 @@
                 <img src="images/piscine6.png" alt="Piscine design" class="h-full w-full object-cover" loading="lazy" decoding="async" />
               </div>
             </div>
-            <!-- contrôles -->
             <button type="button" class="jt-prev absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 backdrop-blur px-3 py-2 shadow hover:bg-white"><span class="sr-only">Précédent</span>‹</button>
             <button type="button" class="jt-next absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/80 backdrop-blur px-3 py-2 shadow hover:bg-white"><span class="sr-only">Suivant</span>›</button>
-            <!-- puces -->
             <div class="jt-dots absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
           </div>
         </div>
-        <!-- /CAROUSEL -->
       </div>
     </section>
 
@@ -241,9 +227,8 @@
     <section class="bg-gray-50 border-y" id="contrats">
       <div class="mx-auto max-w-6xl px-4 py-12">
         <h3 class="text-4xl font-bold">Contrats d'entretien</h3>
-        <p class="mt-2 text-gray-600 max-w-3xl">Des passages réguliers pour garder une eau claire et un matériel qui dure. Les urgences et dépannages restent prioritaires ; on choisit un contrat seulement si ça a du sens pour votre bassin.</p>
+        <p class="mt-2 text-gray-600 max-w-3xl">Des passages réguliers pour garder une eau claire et un matériel qui dure.</p>
 
-        <!-- Cartes packs -->
         <div class="mt-6 grid md:grid-cols-3 gap-6 items-stretch">
           <!-- Essentiel -->
           <div class="rounded-2xl border bg-gray-50 p-5 flex flex-col h-full">
@@ -329,7 +314,6 @@
 
         <!-- Tableau récap -->
         <div class="mt-8">
-          <!-- Desktop -->
           <div class="hidden lg:block overflow-x-auto">
             <table class="w-full text-sm border rounded-xl overflow-hidden">
               <thead class="bg-white">
@@ -367,7 +351,6 @@
             </table>
           </div>
 
-          <!-- Mobile -->
           <div class="lg:hidden space-y-4">
             <div class="bg-white border rounded-xl p-4">
               <h4 class="font-semibold text-brand mb-3">Pack Essentiel</h4>
@@ -415,42 +398,33 @@
         <div class="rounded-2xl border p-4 flex items-center gap-2 bg-white"><i data-lucide="map-pin" class="h-4 w-4"></i> Autres sur demande</div>
       </div>
 
-      <!-- ====== ZONES D'INTERVENTION + CARTE ====== -->
       <section id="zones-carte" class="mx-auto max-w-6xl px-4 py-10">
         <p class="text-sm text-gray-600">Déplacements possibles sur devis en dehors de cette zone.</p>
-
-        <!-- Carte -->
         <div id="zoneMap" class="w-full rounded-2xl border border-gray-200 overflow-hidden aspect-[4/3] sm:h-96"></div>
       </section>
 
-      <!-- Leaflet CSS/JS (CDN) -->
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
       <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
       <script>
-        // Couleur principale (ton "brand")
         const BRAND = "#0891b2";
-
-        // Init carte
         const map = L.map("zoneMap", {
           scrollWheelZoom: false,
           tap: false,
         });
 
-        // Tuiles OSM
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           maxZoom: 19,
           attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
         }).addTo(map);
 
-        // Polygone de zone (approx Bordeaux / Médoc / Bassin d’Arcachon)
         const zoneCoords = [
-          [45.45, -1.25], // Pointe Nord Médoc (côte)
-          [45.45, -0.35], // Nord-Est (blayais)
-          [44.95, -0.2], // Libournais
-          [44.55, -0.3], // Sud-Est (Langon env.)
-          [44.35, -1.25], // Sud-Ouest (Bassin d’Arcachon)
-          [44.85, -1.35], // Côte Médoc
+          [45.45, -1.25],
+          [45.45, -0.35],
+          [44.95, -0.2],
+          [44.55, -0.3],
+          [44.35, -1.25],
+          [44.85, -1.35],
         ];
 
         const zone = L.polygon(zoneCoords, {
@@ -461,7 +435,6 @@
           lineJoin: "round",
         }).addTo(map);
 
-        // Marqueurs villes clés (facultatif)
         const cities = [
           { name: "Bordeaux", pos: [44.8378, -0.5792] },
           { name: "Mérignac", pos: [44.8431, -0.6577] },
@@ -480,7 +453,6 @@
             .addTo(map)
         );
 
-        // Adapter la vue à la zone
         map.fitBounds(zone.getBounds(), { padding: [20, 20] });
       </script>
     </section>
@@ -516,19 +488,36 @@
     </footer>
 
     <script>
-      // Empêche le navigateur de "restaurer" un scroll antérieur (retour arrière)
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
 
-      // icônes + année
+      // Forcer le scroll en haut au chargement
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }, 0);
+      });
+
+      // Au cas où la page se charge depuis le cache
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) {
+          window.scrollTo(0, 0);
+        }
+      });
+
       window.addEventListener("DOMContentLoaded", () => {
+        // Forcer scroll top immédiatement
+        window.scrollTo(0, 0);
+
         if (window.lucide) window.lucide.createIcons();
         const y = document.getElementById("year");
         if (y) y.textContent = new Date().getFullYear();
       });
 
-      // --- Carousel léger (swipe, autoplay, flèches, puces, clavier, reduced motion) ---
+      // Carousel simplifié - défilement lent et régulier
       (() => {
         const root = document.getElementById("jt-carousel");
         if (!root) return;
@@ -539,99 +528,92 @@
         const nextBtn = root.querySelector(".jt-next");
         const dotsWrap = root.querySelector(".jt-dots");
 
-        let index = 0;
-        let autoplay = true;
-        const delay = 4500;
-        let timer;
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+        let autoplayTimer;
 
-        // dots
+        // Créer les points de navigation
         slides.forEach((_, i) => {
-          const b = document.createElement("button");
-          b.type = "button";
-          b.className = "h-2 w-2 rounded-full bg-white/60 ring-1 ring-black/10 hover:bg-white transition";
-          b.addEventListener("click", () => go(i, true));
-          dotsWrap.appendChild(b);
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "h-2 w-2 rounded-full bg-white/60 ring-1 ring-black/10 transition";
+          dot.setAttribute("aria-label", `Aller à la photo ${i + 1}`);
+          dot.addEventListener("click", () => goToSlide(i));
+          dotsWrap.appendChild(dot);
         });
 
-        const updateDots = () => {
-          dotsWrap.querySelectorAll("button").forEach((b, i) => {
-            b.classList.toggle("bg-white", i === index);
-            b.classList.toggle("bg-white/60", i !== index);
-            b.classList.toggle("opacity-60", i !== index);
+        function updateDots() {
+          const dots = dotsWrap.querySelectorAll("button");
+          dots.forEach((dot, i) => {
+            if (i === currentIndex) {
+              dot.classList.add("bg-white");
+              dot.classList.remove("bg-white/60");
+            } else {
+              dot.classList.remove("bg-white");
+              dot.classList.add("bg-white/60");
+            }
           });
-        };
-
-        const go = (i, user = false) => {
-          index = (i + slides.length) % slides.length;
-          track.style.transform = `translateX(-${index * 100}%)`;
-          updateDots();
-          if (user) restart();
-        };
-
-        const next = () => go(index + 1);
-        const prev = () => go(index - 1);
-        prevBtn.addEventListener("click", prev);
-        nextBtn.addEventListener("click", next);
-
-        // autoplay
-        const start = () => {
-          if (autoplay) timer = setInterval(next, delay);
-        };
-        const stop = () => {
-          clearInterval(timer);
-        };
-        const restart = () => {
-          stop();
-          start();
-        };
-
-        root.addEventListener("mouseenter", stop);
-        root.addEventListener("mouseleave", start);
-        window.addEventListener("visibilitychange", () => (document.hidden ? stop() : start()));
-
-        // swipe
-        let startX = 0,
-          curX = 0,
-          dragging = false;
-        const onStart = (x) => {
-          dragging = true;
-          startX = curX = x;
-          stop();
-        };
-        const onMove = (x) => {
-          if (!dragging) return;
-          curX = x;
-          const dx = curX - startX;
-          track.style.transitionDuration = "0ms";
-          track.style.transform = `translateX(calc(-${index * 100}% + ${dx}px))`;
-        };
-        const onEnd = () => {
-          if (!dragging) return;
-          const dx = curX - startX;
-          track.style.transitionDuration = "";
-          if (Math.abs(dx) > root.clientWidth * 0.15) dx < 0 ? next() : prev();
-          else go(index);
-          dragging = false;
-          start();
-        };
-        root.addEventListener("pointerdown", (e) => onStart(e.clientX));
-        window.addEventListener("pointermove", (e) => onMove(e.clientX));
-        window.addEventListener("pointerup", onEnd);
-
-        // accessibilité & motion
-        root.addEventListener("keydown", (e) => {
-          if (e.key === "ArrowLeft") prev();
-          if (e.key === "ArrowRight") next();
-        });
-        const prefersReduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (prefersReduce) {
-          autoplay = false;
-          stop();
         }
 
-        // init
-        go(0);
-        start();
+        function goToSlide(index) {
+          currentIndex = index;
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+          updateDots();
+          resetAutoplay();
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalSlides;
+          goToSlide(currentIndex);
+        }
+
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+          goToSlide(currentIndex);
+        }
+
+        function startAutoplay() {
+          autoplayTimer = setInterval(nextSlide, 5000);
+        }
+
+        function stopAutoplay() {
+          if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+          }
+        }
+
+        function resetAutoplay() {
+          stopAutoplay();
+          startAutoplay();
+        }
+
+        // Événements des boutons
+        prevBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          prevSlide();
+        });
+
+        nextBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          nextSlide();
+        });
+
+        // Pause au survol
+        root.addEventListener("mouseenter", stopAutoplay);
+        root.addEventListener("mouseleave", startAutoplay);
+
+        // Pause quand l'onglet n'est pas visible
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) {
+            stopAutoplay();
+          } else {
+            startAutoplay();
+          }
+        });
+
+        // Initialisation
+        updateDots();
+        startAutoplay();
       })();
     </script>
   </body>
