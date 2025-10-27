@@ -289,93 +289,150 @@
     </div>
 
     <!-- SERVICES -->
-    <section id="services" class="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-      <h2 class="text-2xl sm:text-3xl font-bold">Services d'intervention</h2>
-      <p class="mt-2 text-gray-600 max-w-2xl">Diagnostic, installation, réparation et optimisation de votre système. Matériel toutes marques.</p>
-      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="wrench"></i></span>
-            <div>
-              <h4 class="font-semibold">Dépannage urgent</h4>
-              <p class="mt-1 text-sm text-gray-600">Pompes, tubes, filtres, régulation d'eau, bruits anormaux…</p>
+    <section id="interventions" class="relative overflow-hidden border-y bg-slate-50">
+      <!-- Vidéo de fond -->
+      <video id="bgVideo" data-speed="0.6" class="absolute inset-0 w-full h-full object-cover opacity-25 filter blur-sm saturate-100" src="./videos/214414_tiny.mp4" autoplay muted loop playsinline></video>
+
+      <!-- Overlay pour lisibilité -->
+      <div class="absolute inset-0 bg-white/40 pointer-events-none"></div>
+
+      <!-- Contenu -->
+      <div class="relative z-10 mx-auto max-w-6xl px-4 py-14 lg:py-20">
+        <h2 class="text-2xl sm:text-3xl font-bold">Services d’intervention</h2>
+        <p class="mt-2 text-gray-600 max-w-3xl">Diagnostic, installation, réparation et optimisation de votre système. Matériel toutes marques.</p>
+
+        <!-- Grille services -->
+        <div class="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Dépannage urgent -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="wrench"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Dépannage urgent</h4>
+                <p class="mt-1 text-sm text-gray-600">Pompes, tubes, filtres, régulation d'eau, bruits anormaux...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Filtration & hydraulique -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="droplets"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Filtration &amp; hydraulique</h4>
+                <p class="mt-1 text-sm text-gray-600">Diagnostic et optimisation, fuites local technique.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Électricité & coffrets -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="zap"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Électricité &amp; coffrets</h4>
+                <p class="mt-1 text-sm text-gray-600">Coffrets, disjoncteurs, timers, protections...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rattrapage d'eau verte -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="waves"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Rattrapage d'eau verte en urgence</h4>
+                <p class="mt-1 text-sm text-gray-600">Traitement choc et remise en état rapide de votre bassin.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Remises en service / Hivernage -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="calendar-clock"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Remises en service / Hivernage</h4>
+                <p class="mt-1 text-sm text-gray-600">Ouverture printemps, purge, réglages, hivernage actif/passif.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Régulation & chimie -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="beaker"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Régulation &amp; chimie</h4>
+                <p class="mt-1 text-sm text-gray-600">pH/RedOx, robots, électrolyseur sel, calibrage.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rénovations légères -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="wrench"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Rénovations légères</h4>
+                <p class="mt-1 text-sm text-gray-600">Changement pompe/filtre, joints, petits appareillages...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rénovations lourdes -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="hard-hat"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Rénovations lourdes</h4>
+                <p class="mt-1 text-sm text-gray-600">Remplacement liner, skimmer ou refoulement défectueux, fuites enterrées, réfection local technique…</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Installation neuve -->
+          <div class="rounded-2xl border p-5 bg-white/80 backdrop-blur hover:shadow-sm transition-shadow">
+            <div class="flex items-start gap-3">
+              <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border">
+                <i data-lucide="package-plus"></i>
+              </span>
+              <div>
+                <h4 class="font-semibold">Installation neuve</h4>
+                <p class="mt-1 text-sm text-gray-600">Installation de nouveaux équipements, systèmes de filtration, liner, pompe à chaleur…</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="droplets"></i></span>
-            <div>
-              <h4 class="font-semibold">Filtration & hydraulique</h4>
-              <p class="mt-1 text-sm text-gray-600">Diagnostic et optimisation, fuites local technique.</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="zap"></i></span>
-            <div>
-              <h4 class="font-semibold">Électricité & coffrets</h4>
-              <p class="mt-1 text-sm text-gray-600">Coffrets, disjoncteurs, timers, protections…</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="waves"></i></span>
-            <div>
-              <h4 class="font-semibold">Rattrapage d'eau verte en urgence</h4>
-              <p class="mt-1 text-sm text-gray-600">Traitement choc et remise en état rapide de votre bassin.</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="calendar-clock"></i></span>
-            <div>
-              <h4 class="font-semibold">Remises en service / Hivernage</h4>
-              <p class="mt-1 text-sm text-gray-600">Ouverture printemps, purge, réglages, hivernage actif/passif.</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="beaker"></i></span>
-            <div>
-              <h4 class="font-semibold">Régulation & chimie</h4>
-              <p class="mt-1 text-sm text-gray-600">pH/RedOx, robots, électrolyseur sel, calibrage.</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="settings"></i></span>
-            <div>
-              <h4 class="font-semibold">Rénovations légères</h4>
-              <p class="mt-1 text-sm text-gray-600">Changement pompe/filtre, joints, petits appareillages…</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="settings"></i></span>
-            <div>
-              <h4 class="font-semibold">Rénovations lourdes</h4>
-              <p class="mt-1 text-sm text-gray-600">Remplacement liner, Skimmer ou refoulement défectueux, fuites enterrées, réfection local technique…</p>
-            </div>
-          </div>
-        </div>
-        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
-          <div class="flex items-start gap-3">
-            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="settings"></i></span>
-            <div>
-              <h4 class="font-semibold">Installation neuve</h4>
-              <p class="mt-1 text-sm text-gray-600">Installation de nouveaux équipements, systèmes de filtration, liner, pompe à chaleur ...</p>
-            </div>
-          </div>
-        </div>
+        <!-- fin grille -->
       </div>
+      <!-- fin contenu -->
     </section>
+
+    <!-- Script vitesse vidéo -->
+    <script>
+      const video = document.getElementById("bgVideo");
+      if (video) {
+        const rate = parseFloat(video.getAttribute("data-speed")) || 0.5;
+        video.playbackRate = rate;
+      }
+    </script>
 
     <!-- CONTRATS D'ENTRETIEN (eau animée) -->
     <section id="contrats" class="water-bg border-y relative">
