@@ -3,25 +3,54 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <title>JT Piscines — Dépannage & Contrats d'entretien (Bordeaux, Médoc, Bassin)</title>
+
     <meta name="description" content="Dépannage rapide piscine : filtration, pompes, coffrets, régulation pH/RedOx. Interventions sous 48h selon secteur. Contrats d'entretien disponibles." />
 
+    <!-- Couleur barre navigateur mobile -->
+    <meta name="theme-color" content="#0891b2" />
+
+    <!-- Canonical : à mettre à jour avec ton vrai domaine -->
+    <link rel="canonical" href="https://tondomaine.fr/" />
+
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>💧</text></svg>" />
 
-    <link rel="canonical" href="https://tondomaine.fr/" />
+    <!-- Open Graph (Facebook / Messenger / WhatsApp preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="JT Piscines" />
     <meta property="og:title" content="JT Piscines — Dépannage & Contrats (Bordeaux, Médoc, Bassin)" />
     <meta property="og:description" content="Dépannage rapide, contrats d'entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
-    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://tondomaine.fr/" />
     <meta property="og:image" content="https://tondomaine.fr/og.jpg" />
 
+    <!-- Twitter Card (aperçu X/Twitter) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="JT Piscines — Dépannage & Contrats d'entretien piscine" />
+    <meta name="twitter:description" content="Intervention rapide filtration / pompe / coffret. Médoc, Bordeaux, Bassin. Rattrapage d'eau verte et hivernage." />
+    <meta name="twitter:image" content="https://tondomaine.fr/og.jpg" />
+
+    <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: "#0891b2" } } } } };
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: { DEFAULT: "#0891b2" },
+            },
+          },
+        },
+      };
     </script>
+
+    <!-- Lucide icons -->
     <script defer src="https://unpkg.com/lucide@latest"></script>
 
+    <!-- Données structurées LocalBusiness (SEO local / Google Maps) -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -32,7 +61,19 @@
         "areaServed": ["Bordeaux Métropole", "Médoc", "Bassin d'Arcachon"],
         "url": "https://tondomaine.fr",
         "description": "Dépannage & interventions piscine: filtration, pompes, coffrets, régulation.",
-        "address": { "@type": "PostalAddress", "addressLocality": "Bordeaux", "addressCountry": "FR" }
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bordeaux",
+          "addressCountry": "FR"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "20:00"
+          }
+        ]
       }
     </script>
 
@@ -49,6 +90,8 @@
         overflow-x: hidden;
         position: relative;
       }
+
+      /* icônes placeholder avant que lucide remplace */
       i[data-lucide]::before {
         content: "◆";
         font-size: 0.9em;
@@ -57,6 +100,7 @@
       svg.lucide + i[data-lucide]::before {
         content: "";
       }
+
       @media (max-width: 640px) {
         input,
         select,
@@ -75,7 +119,6 @@
       * {
         max-width: 100%;
       }
-
       html,
       body {
         width: 100%;
@@ -87,7 +130,6 @@
         position: relative;
         overflow: hidden;
       }
-
       .water-bg canvas {
         position: absolute;
         top: 0;
@@ -97,7 +139,6 @@
         z-index: 0;
         opacity: 0.4;
       }
-
       .water-bg > * {
         position: relative;
         z-index: 1;
@@ -117,18 +158,15 @@
         justify-content: center;
         padding: 20px;
       }
-
       .lightbox.active {
         display: flex;
       }
-
       .lightbox img {
         max-width: 90vw;
         max-height: 90vh;
         object-fit: contain;
         border-radius: 8px;
       }
-
       .lightbox-close {
         position: absolute;
         top: 20px;
@@ -146,11 +184,9 @@
         color: #333;
         z-index: 10000;
       }
-
       .lightbox-close:hover {
         background: #f0f0f0;
       }
-
       .lightbox-nav {
         position: absolute;
         top: 50%;
@@ -168,15 +204,12 @@
         color: #333;
         z-index: 10000;
       }
-
       .lightbox-nav:hover {
         background: #f0f0f0;
       }
-
       .lightbox-prev {
         left: 20px;
       }
-
       .lightbox-next {
         right: 20px;
       }
@@ -947,6 +980,13 @@
 
         animate();
       })();
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      });
     </script>
   </body>
 </html>
