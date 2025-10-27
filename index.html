@@ -201,11 +201,9 @@
           <a class="hover:text-brand transition-colors" href="#contrats">Contrats d'entretien</a>
           <a class="hover:text-brand transition-colors" href="#zones">Zones</a>
           <a class="hover:text-brand transition-colors" href="#contact">Contact</a>
-          <a class="hover:text-brand transition-colors" href="cgu-cgv.html" rel="nofollow">CGU/CGV</a>
         </nav>
 
         <div class="flex items-center gap-2">
-          <a href="cgu-cgv.html" rel="nofollow" class="sm:hidden inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="file-text"></i> CGU/CGV </a>
           <a id="callBtn" href="tel:+33768186749" class="inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm hover:bg-gray-50"> <i data-lucide="phone"></i> Appeler </a>
           <a id="waBtn" href="https://wa.me/33768186749" rel="noopener" class="inline-flex items-center gap-2 rounded-xl bg-brand px-3 py-2 text-sm font-medium text-white hover:brightness-95"> <i data-lucide="message-circle"></i> WhatsApp </a>
         </div>
@@ -230,7 +228,7 @@
             <div class="flex items-center gap-2"><i data-lucide="shield"></i> Travail propre & soigné</div>
             <div class="flex items-center gap-2"><i data-lucide="clock"></i> Créneaux sous 48h*</div>
           </div>
-          <p class="mt-1 text-xs text-gray-400">*selon période et secteur</p>
+          <p class="mt-1 text-xs text-gray-400 flex justify-center">*selon période et secteur</p>
         </div>
 
         <!-- CAROUSEL -->
@@ -293,7 +291,7 @@
     <!-- SERVICES -->
     <section id="services" class="mx-auto max-w-6xl px-4 py-14 lg:py-20">
       <h2 class="text-2xl sm:text-3xl font-bold">Services d'intervention</h2>
-      <p class="mt-2 text-gray-600 max-w-2xl">Diagnostic, réparation et optimisation de votre installation. Matériel toutes marques.</p>
+      <p class="mt-2 text-gray-600 max-w-2xl">Diagnostic, installation, réparation et optimisation de votre système. Matériel toutes marques.</p>
       <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
           <div class="flex items-start gap-3">
@@ -358,69 +356,163 @@
             </div>
           </div>
         </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="settings"></i></span>
+            <div>
+              <h4 class="font-semibold">Rénovations lourdes</h4>
+              <p class="mt-1 text-sm text-gray-600">Remplacement liner, Skimmer ou refoulement défectueux, fuites enterrées, réfection local technique…</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-2xl border p-5 bg-white hover:shadow-sm transition-shadow">
+          <div class="flex items-start gap-3">
+            <span class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-cyan-50 border"><i data-lucide="settings"></i></span>
+            <div>
+              <h4 class="font-semibold">Installation neuve</h4>
+              <p class="mt-1 text-sm text-gray-600">Installation de nouveaux équipements, systèmes de filtration, liner, pompe à chaleur ...</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTRATS D'ENTRETIEN (eau animée) -->
     <section id="contrats" class="water-bg border-y relative">
       <canvas id="waterCanvas"></canvas>
+
       <div class="mx-auto max-w-6xl px-4 py-14 lg:py-20 relative z-10">
         <h2 class="text-2xl sm:text-3xl font-bold">Contrats d'entretien</h2>
         <p class="mt-2 text-gray-600 max-w-2xl">Des passages réguliers pour garder une eau claire et un matériel qui dure. Personnalisable selon votre besoin.</p>
+
         <div class="mt-8 grid md:grid-cols-3 gap-6">
           <!-- Pack Essentiel -->
           <div class="rounded-2xl border bg-white p-6 hover:shadow-lg transition-shadow">
-            <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="droplet"></i> Pack Essentiel</div>
+            <div class="flex items-center gap-2 text-brand font-semibold">
+              <i data-lucide="droplet"></i>
+              <span>Pack Essentiel</span>
+            </div>
+
             <div class="mt-4">
-              <span class="text-3xl font-bold">59€</span>
+              <span class="text-3xl font-bold">79€</span>
               <span class="text-gray-500">/mois</span>
             </div>
-            <p class="mt-2 text-sm text-gray-600">1 visite / mois (saison)</p>
+
+            <!-- période claire -->
+            <p class="mt-1 text-xs text-gray-500 font-medium">Contrat saison estivale (mai → septembre)</p>
+
+            <p class="mt-2 text-sm text-gray-600">1 visite / mois</p>
+
             <ul class="mt-4 space-y-2 text-sm">
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Nettoyage du filtre</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Vérification pH et chlore</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Contrôle visuel équipements</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Conseils personnalisés</li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Nettoyage du filtre
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Vérification qualité de l'eau
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Contrôle visuel des équipements
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Conseils personnalisés
+              </li>
             </ul>
-            <a href="tel:+33768186749" class="mt-6 block w-full rounded-xl border px-4 py-2.5 text-center hover:bg-gray-50 transition">Souscrire</a>
+
+            <a href="tel:+33768186749" class="mt-6 block w-full rounded-xl border px-4 py-2.5 text-center hover:bg-gray-50 transition"> Souscrire </a>
           </div>
 
           <!-- Pack Confort -->
           <div class="rounded-2xl border-2 border-brand bg-white p-6 hover:shadow-lg transition-shadow relative">
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand px-3 py-1 text-xs text-white font-medium">Populaire</div>
-            <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="droplets"></i> Pack Confort</div>
+
+            <div class="flex items-center gap-2 text-brand font-semibold">
+              <i data-lucide="droplets"></i>
+              <span>Pack Confort</span>
+            </div>
+
             <div class="mt-4">
-              <span class="text-3xl font-bold">89€</span>
+              <span class="text-3xl font-bold">129€</span>
               <span class="text-gray-500">/mois</span>
             </div>
-            <p class="mt-2 text-sm text-gray-600">2 visites / mois (saison)</p>
+
+            <!-- période claire -->
+            <p class="mt-1 text-xs text-gray-500 font-medium">Contrat saison estivale (mai → septembre)</p>
+
+            <p class="mt-2 text-sm text-gray-600">2 visites / mois</p>
+
             <ul class="mt-4 space-y-2 text-sm">
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Tout du Pack Essentiel</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Nettoyage de ligne d'eau</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Aspiration rapide du fond</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Vérification pompe & skimmers</li>
+              <li class="flex items-start gap-2 font-bold">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Tout le Pack Essentiel +
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Nettoyage de ligne d'eau
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Aspiration du fond
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Vérification pompe &amp; skimmers
+              </li>
             </ul>
-            <a href="tel:+33768186749" class="mt-6 block w-full rounded-xl bg-brand px-4 py-2.5 text-center text-white font-medium hover:brightness-95 transition">Souscrire</a>
+
+            <a href="tel:+33768186749" class="mt-6 block w-full rounded-xl bg-brand px-4 py-2.5 text-center text-white font-medium hover:brightness-95 transition"> Souscrire </a>
           </div>
 
           <!-- Pack Premium -->
           <div class="rounded-2xl border bg-white p-6 hover:shadow-lg transition-shadow">
-            <div class="flex items-center gap-2 text-brand font-semibold"><i data-lucide="sparkles"></i> Pack Premium</div>
+            <div class="flex items-center gap-2 text-brand font-semibold">
+              <i data-lucide="sparkles"></i>
+              <span>Pack Premium</span>
+            </div>
+
             <div class="mt-4">
-              <span class="text-3xl font-bold">139€</span>
+              <span class="text-3xl font-bold">219€</span>
               <span class="text-gray-500">/mois</span>
             </div>
-            <p class="mt-2 text-sm text-gray-600">1 visite / semaine (saison)</p>
+
+            <!-- période claire -->
+            <p class="mt-1 text-xs text-gray-500 font-medium">Contrat saison estivale (mai → septembre)</p>
+
+            <p class="mt-2 text-sm text-gray-600">1 visite / semaine</p>
+
             <ul class="mt-4 space-y-2 text-sm">
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Tout du Pack Confort</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Nettoyage complet + brossage</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> Analyse eau complète</li>
-              <li class="flex items-start gap-2"><i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i> -10% sur interventions hors contrat</li>
+              <li class="flex items-start gap-2 font-bold">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Tout le Pack Confort +
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Nettoyage complet + brossage
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                Analyse eau complète
+              </li>
+              <li class="flex items-start gap-2">
+                <i data-lucide="check" class="h-4 w-4 shrink-0 text-brand mt-0.5"></i>
+                -10% sur interventions hors contrat
+              </li>
             </ul>
-            <a href="tel:+33768186749" class="mt-6 block w-full rounded-xl border px-4 py-2.5 text-center hover:bg-gray-50 transition">Souscrire</a>
+
+            <a href="tel:+33768186749" class="mt-6 block w-full rounded-xl border px-4 py-2.5 text-center hover:bg-gray-50 transition"> Souscrire </a>
           </div>
         </div>
-        <p class="mt-6 text-sm text-gray-500 text-center">Tous les contrats incluent un bilan de démarrage et un bilan de fin de saison. Engagement annuel, résiliation à tout moment. Produits chimiques en sus.</p>
+
+        <!-- Bandeau légal / clarification saison été / hiver -->
+        <p class="mt-6 text-sm text-gray-500 text-center leading-relaxed">
+          Les contrats couvrent uniquement la saison estivale (mai → septembre).<br />
+          Bilan de démarrage et bilan de fin de saison inclus.<br />
+          Hivernage / remise en route, produits chimiques et interventions hors contrat sont facturés séparément.<br />
+          Engagement saisonnier, résiliation à tout moment.
+        </p>
       </div>
     </section>
 
@@ -508,11 +600,11 @@
                 </div>
                 <div class="flex justify-between py-2 border-b">
                   <span class="font-medium">Samedi</span>
-                  <span class="text-gray-600">9h - 17h</span>
+                  <span class="text-gray-600">Sur demande</span>
                 </div>
                 <div class="flex justify-between py-2">
                   <span class="font-medium">Dimanche</span>
-                  <span class="text-gray-600">Sur demande</span>
+                  <span class="text-gray-600">Fermé</span>
                 </div>
               </div>
               <p class="mt-4 text-xs text-gray-500">Les horaires peuvent varier selon la période. Contactez-nous pour plus d'informations.</p>
@@ -528,8 +620,7 @@
         <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
           <p class="text-sm text-gray-500">© <span id="year">2024</span> JT Piscines. Tous droits réservés.</p>
           <div class="flex items-center gap-4 text-sm">
-            <a href="cgu-cgv.html" class="text-gray-600 hover:text-brand transition-colors">CGU / CGV</a>
-            <a href="mentions-legales.html" class="text-gray-600 hover:text-brand transition-colors">Mentions légales</a>
+            <a href="cgu-cgv.html" class="text-gray-600 font-extrabold hover:text-brand transition-colors">CGU / CGV</a>
           </div>
         </div>
       </div>
