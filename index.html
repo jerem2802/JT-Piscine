@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#0891b2" />
 
     <!-- Canonical : à mettre à jour avec ton vrai domaine -->
-    <link rel="canonical" href="https://tondomaine.fr/" />
+    <link rel="canonical" href="https://jtpiscines.fr/" />
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='80'>💧</text></svg>" />
@@ -24,14 +24,14 @@
     <meta property="og:site_name" content="JT Piscines" />
     <meta property="og:title" content="JT Piscines — Dépannage & Contrats (Bordeaux, Médoc, Bassin)" />
     <meta property="og:description" content="Dépannage rapide, contrats d'entretien, filtration, pompes, coffrets, régulation. Interventions sous 48h selon secteur." />
-    <meta property="og:url" content="https://tondomaine.fr/" />
-    <meta property="og:image" content="https://tondomaine.fr/og.jpg" />
+    <meta property="og:url" content="https://jtpiscines.fr/" />
+    <meta property="og:image" content="https://jtpiscines.fr/social-card-jtpiscines.jpg" />
 
     <!-- Twitter Card (aperçu X/Twitter) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="JT Piscines — Dépannage & Contrats d'entretien piscine" />
     <meta name="twitter:description" content="Intervention rapide filtration / pompe / coffret. Médoc, Bordeaux, Bassin. Rattrapage d'eau verte et hivernage." />
-    <meta name="twitter:image" content="https://tondomaine.fr/og.jpg" />
+    <meta name="twitter:image" content="https://jtpiscines.fr/social-card-jtpiscines.jpg" />
 
     <!-- Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,14 +56,16 @@
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "JT Piscines",
-        "image": "https://tondomaine.fr/og.jpg",
-        "telephone": "+33PHONE",
+        "legalName": "JT Piscines",
+        "taxID": "824807697",
+        "image": ["https://jtpiscines.fr/logo1.png", "https://jtpiscines.fr/social-card-jtpiscines.jpg"],
+        "url": "https://jtpiscines.fr/",
+        "telephone": "+33768186749",
         "areaServed": ["Bordeaux Métropole", "Médoc", "Bassin d'Arcachon"],
-        "url": "https://tondomaine.fr",
-        "description": "Dépannage & interventions piscine: filtration, pompes, coffrets, régulation.",
+        "description": "Dépannage & interventions piscine: filtration, pompes, coffrets, régulation pH/RedOx, rattrapage d'eau verte, hivernage.",
         "address": {
           "@type": "PostalAddress",
-          "addressLocality": "Bordeaux",
+          "addressLocality": "Le Pian-Médoc",
           "addressCountry": "FR"
         },
         "openingHoursSpecification": [
@@ -705,13 +707,42 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t bg-white">
-      <div class="mx-auto max-w-6xl px-4 py-8">
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p class="text-sm text-gray-500">© <span id="year">2024</span> JT Piscines. Tous droits réservés.</p>
-          <div class="flex items-center gap-4 text-sm">
-            <a href="cgu-cgv.html" class="text-gray-600 font-extrabold hover:text-brand transition-colors">CGU / CGV</a>
-          </div>
+    <footer class="border-t bg-gray-50 text-gray-600 text-sm mt-16">
+      <div class="mx-auto max-w-6xl px-4 py-10 grid gap-8 md:grid-cols-3">
+        <div>
+          <h3 class="text-gray-900 font-semibold text-base">JT Piscines</h3>
+          <p class="mt-2 leading-relaxed">
+            Entretien, dépannage, hivernage, rattrapage d'eau verte.<br />
+            Intervention Médoc, Bordeaux, Bassin d'Arcachon.
+          </p>
+          <p class="mt-2">
+            SIREN : <span class="text-gray-900 font-medium">824&nbsp;807&nbsp;697</span><br />
+            Micro-entreprise
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-gray-900 font-semibold text-base">Contact</h4>
+          <ul class="mt-2 space-y-1">
+            <li class="flex items-center gap-2">
+              <i data-lucide="phone" class="h-4 w-4 text-brand"></i>
+              <a class="hover:text-brand transition-colors" href="tel:+33768186749"> 07 68 18 67 49 </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="message-circle" class="h-4 w-4 text-brand"></i>
+              <a class="hover:text-brand transition-colors" href="https://wa.me/33768186749" rel="noopener"> WhatsApp direct </a>
+            </li>
+            <li class="flex items-center gap-2">
+              <i data-lucide="mail" class="h-4 w-4 text-brand"></i>
+              <span>contact@jtpiscines.fr</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-gray-900 font-semibold text-base">Infos</h4>
+          <p class="mt-2 leading-relaxed text-[13px] text-gray-600">Les contrats d'entretien couvrent uniquement la saison estivale (mai → septembre). Produits chimiques, hivernage, remise en route et interventions hors contrat sont facturés séparément.</p>
+          <p class="mt-3 text-[13px]">© JT Piscines — Tous droits réservés.</p>
         </div>
       </div>
     </footer>
